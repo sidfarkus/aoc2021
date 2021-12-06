@@ -1,7 +1,6 @@
 require "big"
 
 today =  File.read("input").split(",").map(&.to_i8)
-memo = Hash({Int8, Int32}, BigInt).new
 
 # generic memoization macro for fun
 macro memoize(name, *args, ret_type, &fn)
