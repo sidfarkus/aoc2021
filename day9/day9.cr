@@ -26,8 +26,8 @@ while candidates.any?
     [{x - 1, y}, {x + 1, y}, {x, y - 1}, {x, y + 1}].each do |(newx, newy)|
         if newy >= 0 && newy < height && newx >= 0 && newx < width
             new_height = map[newy][newx]
-            candidates.push({id, newx, newy}) if  new_height < 9
+            candidates.push({id, newx, newy}) if new_height < 9
         end
     end
 end
-puts basins.map(&.size).sort![-3, 3].product
+puts basins.map(&.size).sort![-3..].product
